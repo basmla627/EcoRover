@@ -5,7 +5,7 @@
 
 #define soilPin       27  
 #define mq2Pin        14   
-#define waterLevelPin 12
+#define waterLevelPin 4
 #define ldr           35
 
 #define pumb          13 
@@ -17,7 +17,7 @@
 #define flame4Pin     18
 #define flame5Pin     5
 
-#define left1         4
+#define left1         12
 #define left2         16
 #define right1        2
 #define right2        0
@@ -154,15 +154,40 @@ void loop() {
 
 void forward() {
   
-   digitalWrite(right1,HIGH);
-    digitalWrite(right2,LOW);
-    digitalWrite(en1,HIGH);
-    digitalWrite(left1,HIGH);
-    digitalWrite(left2,LOW);
-    digitalWrite(en2,HIGH);
+  // digitalWrite(right1, LOW);
+  // digitalWrite(right2, HIGH);
+  // digitalWrite(en1, HIGH);
+
+  //  digitalWrite(left1, LOW);
+  // digitalWrite(left2, HIGH);
+  //  digitalWrite(en2, HIGH);
+
+  digitalWrite(right1,LOW);
+  digitalWrite(right2, HIGH);
+  digitalWrite(en1, HIGH);
+
+  digitalWrite(left1,HIGH);
+  digitalWrite(left2,LOW);
+  digitalWrite(en2, HIGH);
+
 }
 
+
+
+
 void back() {
+  digitalWrite(right1, HIGH);
+  digitalWrite(right2, LOW);
+  digitalWrite(en1, HIGH);
+
+  digitalWrite(left1, LOW);
+  digitalWrite(left2, HIGH);
+  digitalWrite(en2, HIGH);
+
+  
+}
+
+void left() {
   digitalWrite(right1, LOW);
   digitalWrite(right2, HIGH);
   digitalWrite(en1, HIGH);
@@ -172,26 +197,14 @@ void back() {
    digitalWrite(en2, HIGH);
 }
 
-void left() {
-  digitalWrite(right1, HIGH);
-  digitalWrite(right2, LOW);
-  digitalWrite(en1, HIGH);
-
-  digitalWrite(left1, LOW);
-  digitalWrite(left2, HIGH);
-  digitalWrite(en2, HIGH);
-}
-
 void right() {
-  
+     digitalWrite(right1,HIGH);
+    digitalWrite(right2,LOW);
+    digitalWrite(en1,HIGH);
+    digitalWrite(left1,HIGH);
+    digitalWrite(left2,LOW);
+    digitalWrite(en2,HIGH);
 
-  digitalWrite(right1, LOW);
-  digitalWrite(right2, HIGH);
-  digitalWrite(en1, HIGH);
-
-  digitalWrite(left1, HIGH);
-  digitalWrite(left2, LOW);
-  digitalWrite(en2, HIGH);
 }
 
 void stop() {
